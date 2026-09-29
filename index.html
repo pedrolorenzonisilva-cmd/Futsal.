@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site completo sobre futsal: história, regras, posições, fundamentos e curiosidades.">
+  <meta name="theme-color" content="#071a2b">
+
+  <title>Futsal | Paixão, Técnica e Velocidade</title>
+
+  <style>
+    :root {
+      --primary: #00c2ff;
+      --primary-dark: #008fc0;
+      --secondary: #00e676;
+      --dark: #06111d;
+      --dark-2: #0a1d2e;
+      --card: #10283c;
+      --text: #f5f9fc;
+      --muted: #a9bdcc;
+      --border: rgba(255,255,255,.1);
+      --shadow: 0 20px 50px rgba(0,0,0,.3);
+      --radius: 20px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(0,194,255,.12), transparent 30%),
+        var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(6,17,29,.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #00131e;
+      font-size: 1.35rem;
+      box-shadow: 0 8px 25px rgba(0,194,255,.25);
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 7px;
+    }
+
+    nav a {
+      display: block;
+      padding: 9px 13px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: .95rem;
+      transition: .25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: white;
+      background: rgba(255,255,255,.08);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 70px;
+      background:
+        linear-gradient(90deg, rgba(6,17,29,.97) 0%, rgba(6,17,29,.78) 55%, rgba(6,17,29,.4) 100%),
+        radial-gradient(circle at 80% 45%, rgba(0,194,255,.25), transparent 35%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      right: -150px;
+      top: 100px;
+      border: 1px solid rgba(0,194,255,.2);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 50px rgba(0,194,255,.03),
+        0 0 0 100px rgba(0,194,255,.02);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 13px;
+      border: 1px solid rgba(0,194,255,.3);
+      background: rgba(0,194,255,.08);
+      color: var(--primary);
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      padding: 13px 21px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      color: #00131e;
+      background: linear-gradient(135deg, var(--primary), #52dcff);
+      box-shadow: 0 10px 30px rgba(0,194,255,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,194,255,.3);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.09);
+      transform: translateY(-3px);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .mini {
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      margin-top: -35px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      padding: 25px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* ================= SOBRE ================= */
+
+    .about {
+      background: #081827;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .court {
+      min-height: 430px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)),
+        repeating-linear-gradient(
+          90deg,
+          #168f58 0,
+          #168f58 55px,
+          #148652 55px,
+          #148652 110px
+        );
+      border: 8px solid #e9f1e8;
+      box-shadow: var(--shadow);
+    }
+
+    .court::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border: 5px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .court::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      background: rgba(255,255,255,.8);
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    .goal {
+      position: absolute;
+      width: 55px;
+      height: 130px;
+      border: 5px solid white;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .goal-left {
+      left: -5px;
+      border-left: 0;
+    }
+
+    .goal-right {
+      right: -5px;
+      border-right: 0;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      flex: 0 0 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(0,230,118,.12);
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    /* ================= POSIÇÕES ================= */
+
+    .positions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .position-card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #10283c, #0b1d2d);
+      transition: .3s ease;
+    }
+
+    .position-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0,194,255,.35);
+    }
+
+    .position-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(0,194,255,.1);
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .position-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .position-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* ================= REGRAS ================= */
+
+    .rules {
+      background: #081827;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rule {
+      padding: 25px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .rule-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: rgba(0,194,255,.3);
+      margin-bottom: 5px;
+    }
+
+    .rule h3 {
+      margin-bottom: 8px;
+    }
+
+    .rule p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* ================= BENEFÍCIOS ================= */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .benefit {
+      padding: 25px;
+      display: flex;
+      gap: 18px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,230,118,.1);
+      color: var(--secondary);
+      font-size: 1.4rem;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 5px;
+    }
+
+    /* ================= CURIOSIDADES ================= */
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .fact {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      padding: 30px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(145deg, rgba(0,194,255,.1), rgba(0,230,118,.04)),
+        var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .fact::before {
+      content: "⚽";
+      position: absolute;
+      right: -10px;
+      bottom: -25px;
+      font-size: 8rem;
+      opacity: .05;
+    }
+
+    .fact h3 {
+      margin-bottom: 12px;
+    }
+
+    .fact p {
+      color: var(--muted);
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      padding: 80px 0;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 65px 25px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at center, rgba(0,194,255,.18), transparent 55%),
+        linear-gradient(135deg, #0d2940, #0b1b2a);
+      border: 1px solid var(--border);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      background: #040d15;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-content p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--muted);
+      transition: .25s;
+    }
+
+    .social a:hover {
+      color: white;
+      border-color: var(--primary);
+      background: rgba(0,194,255,.08);
+    }
+
+    /* ================= ANIMAÇÃO ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVO ================= */
+
+    @media (max-width: 900px) {
+      nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background: rgba(6,17,29,.98);
+        border-bottom: 1px solid var(--border);
+        display: none;
+      }
+
+      nav.open {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        padding: 13px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rules-grid,
+      .facts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .stats-grid,
+      .positions-grid,
+      .rules-grid,
+      .benefits-grid,
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .court {
+        min-height: 300px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#inicio" class="logo">
+        <div class="logo-icon">⚽</div>
+        FUTSAL<span>+</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#posicoes">Posições</a></li>
+          <li><a href="#regras">Regras</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <span class="tag">Paixão • Técnica • Velocidade</span>
+
+          <h1>
+            O jogo começa<br>
+            <span>dentro da quadra.</span>
+          </h1>
+
+          <p>
+            Descubra o universo do futsal, conheça suas regras,
+            posições, fundamentos e tudo o que torna esse esporte
+            tão rápido, técnico e apaixonante.
+          </p>
+
+          <div class="buttons">
+            <a href="#sobre" class="btn btn-primary">
+              Conhecer o futsal →
+            </a>
+
+            <a href="#regras" class="btn btn-outline">
+              Ver regras
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ESTATÍSTICAS ================= -->
+
+    <section class="stats">
+      <div class="container">
+
+        <div class="stats-grid reveal">
+
+          <div class="stat">
+            <strong>5</strong>
+            <span>Jogadores em quadra</span>
+          </div>
+
+          <div class="stat">
+            <strong>40'</strong>
+            <span>Tempo regulamentar</span>
+          </div>
+
+          <div class="stat">
+            <strong>4</strong>
+            <span>Posições principais</span>
+          </div>
+
+          <div class="stat">
+            <strong>1</strong>
+            <span>Objetivo: fazer gols</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+
+    <section class="about" id="sobre">
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="court reveal">
+            <div class="goal goal-left"></div>
+            <div class="goal goal-right"></div>
+          </div>
+
+          <div class="about-text reveal">
+
+            <div class="section-heading">
+              <div class="mini">Sobre o esporte</div>
+
+              <h2>
+                Futsal é intensidade em cada segundo.
+              </h2>
+            </div>
+
+            <p>
+              O futsal é uma modalidade esportiva disputada em uma
+              quadra, normalmente com duas equipes de cinco jogadores.
+              A partida exige velocidade, precisão, inteligência
+              tática e excelente controle da bola.
+            </p>
+
+            <p>
+              Como o espaço é reduzido em comparação ao futebol de
+              campo, as decisões acontecem rapidamente. Cada passe,
+              movimento e finalização pode mudar o rumo da partida.
+            </p>
+
+            <ul class="check-list">
+              <li>
+                <span class="check">✓</span>
+                Alto nível de técnica individual
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Jogo rápido e dinâmico
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Forte trabalho coletivo
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Grande importância da estratégia
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= POSIÇÕES ================= -->
+
+    <section id="posicoes">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="mini">Dentro da quadra</div>
+          <h2>Conheça as posições</h2>
+          <p>
+            Cada jogador possui responsabilidades diferentes,
+            mas todos precisam participar do sistema da equipe.
+          </p>
+        </div>
+
+        <div class="positions-grid">
+
+          <article class="position-card reveal">
+            <div class="position-icon">🧤</div>
+            <h3>Goleiro</h3>
+            <p>
+              Responsável por proteger a meta. Também participa
+              da construção das jogadas e pode atuar com os pés.
+            </p>
+          </article>
+
+          <article class="position-card reveal">
+            <div class="position-icon">🛡️</div>
+            <h3>Fixo</h3>
+            <p>
+              Atua principalmente na defesa, ajudando a organizar
+              a equipe e iniciar as jogadas ofensivas.
+            </p>
+          </article>
+
+          <article class="position-card reveal">
+            <div class="position-icon">⚡</div>
+            <h3>Ala</h3>
+            <p>
+              Ocupa os lados da quadra e contribui tanto na
+              defesa quanto no ataque.
+            </p>
+          </article>
+
+          <article class="position-card reveal">
+            <div class="position-icon">🎯</div>
+            <h3>Pivô</h3>
+            <p>
+              Atua mais próximo da área adversária, protegendo
+              a bola, criando oportunidades e finalizando.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= REGRAS ================= -->
+
+    <section class="rules" id="regras">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="mini">Fundamentos do jogo</div>
+          <h2>Regras essenciais</h2>
+          <p>
+            Alguns conceitos básicos para entender melhor uma
+            partida de futsal.
+          </p>
+        </div>
+
+        <div class="rules-grid">
+
+          <article class="rule reveal">
+            <div class="rule-number">01</div>
+            <h3>Equipes</h3>
+            <p>
+              Cada equipe inicia a partida com cinco jogadores,
+              incluindo o goleiro.
+            </p>
+          </article>
+
+          <article class="rule reveal">
+            <div class="rule-number">02</div>
+            <h3>Substituições</h3>
+            <p>
+              O jogo possui substituições durante a partida,
+              permitindo mudanças constantes na equipe.
+            </p>
+          </article>
+
+          <article class="rule reveal">
+            <div class="rule-number">03</div>
+            <h3>Faltas</h3>
+            <p>
+              Infrações são punidas conforme sua natureza e
+              quantidade acumulada pela equipe.
+            </p>
+          </article>
+
+          <article class="rule reveal">
+            <div class="rule-number">04</div>
+            <h3>Bola fora</h3>
+            <p>
+              Quando a bola sai pelas linhas laterais, o reinício
+              ocorre com cobrança específica da modalidade.
+            </p>
+          </article>
+
+          <article class="rule reveal">
+            <div class="rule-number">05</div>
+            <h3>Goleiro</h3>
+            <p>
+              O goleiro possui regras próprias relacionadas à
+              atuação dentro e fora de sua área.
+            </p>
+          </article>
+
+          <article class="rule reveal">
+            <div class="rule-number">06</div>
+            <h3>Objetivo</h3>
+            <p>
+              Vence a equipe que marcar mais gols durante o tempo
+              regulamentar, considerando o regulamento da competição.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= BENEFÍCIOS ================= -->
+
+    <section id="beneficios">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="mini">Muito além da competição</div>
+          <h2>Por que praticar futsal?</h2>
+          <p>
+            A prática do esporte pode contribuir para diferentes
+            aspectos físicos, técnicos e sociais.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+
+          <article class="benefit reveal">
+            <div class="benefit-icon">🏃</div>
+
+            <div>
+              <h3>Condicionamento físico</h3>
+              <p>
+                Movimentos constantes ajudam a desenvolver
+                resistência, velocidade e agilidade.
+              </p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <div class="benefit-icon">🧠</div>
+
+            <div>
+              <h3>Tomada de decisão</h3>
+              <p>
+                O ritmo rápido exige leitura do jogo e decisões
+                em pouco tempo.
+              </p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <div class="benefit-icon">🤝</div>
+
+            <div>
+              <h3>Trabalho em equipe</h3>
+              <p>
+                A comunicação e a cooperação são fundamentais
+                para executar as jogadas.
+              </p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <div class="benefit-icon">⚽</div>
+
+            <div>
+              <h3>Controle de bola</h3>
+              <p>
+                A quadra menor proporciona muitas situações
+                para aprimorar domínio, passe e condução.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CURIOSIDADES ================= -->
+
+    <section class="about" id="curiosidades">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="mini">Você sabia?</div>
+          <h2>Curiosidades sobre o futsal</h2>
+          <p>
+            Alguns aspectos interessantes da modalidade.
+          </p>
+        </div>
+
+        <div class="facts">
+
+          <article class="fact reveal">
+            <h3>Jogo extremamente rápido</h3>
+            <p>
+              A proximidade entre os jogadores faz com que
+              passes, marcações e finalizações aconteçam em
+              intervalos muito curtos.
+            </p>
+          </article>
+
+          <article class="fact reveal">
+            <h3>Todos atacam e defendem</h3>
+            <p>
+              Mesmo com posições definidas, o futsal moderno
+              exige participação coletiva durante as fases
+              ofensiva e defensiva.
+            </p>
+          </article>
+
+          <article class="fact reveal">
+            <h3>A bola é especial</h3>
+            <p>
+              A bola utilizada no futsal possui características
+              próprias, favorecendo o controle e o jogo em
+              superfície reduzida.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+      <div class="container">
+
+        <div class="cta-box reveal">
+
+          <h2>Pronto para entrar em quadra?</h2>
+
+          <p>
+            O futsal combina técnica, velocidade, estratégia
+            e paixão. Escolha seu time, pegue a bola e comece
+            a jogar.
+          </p>
+
+          <a href="#inicio" class="btn btn-primary">
+            Voltar ao topo ↑
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    <div class="container footer-content">
+
+      <p>
+        © <span id="year"></span> FUTSAL+ — Feito para quem ama futsal.
+      </p>
+
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+        <a href="#" aria-label="TikTok">TK</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+    // Menu mobile
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+
+      const aberto = nav.classList.contains("open");
+
+      menuBtn.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+
+      menuBtn.textContent = aberto ? "✕" : "☰";
+    });
+
+    // Fecha o menu ao clicar em um link
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-label", "Abrir menu");
+      });
+    });
+
+    // Ano automático
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Animação ao aparecer na tela
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+    // Link ativo conforme a seção visualizada
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll("nav a");
+
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+
+            links.forEach(link => {
+              link.classList.remove("active");
+            });
+
+            const activeLink = document.querySelector(
+              `nav a[href="#${entry.target.id}"]`
+            );
+
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-35% 0px -55% 0px"
+      }
+    );
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+  </script>
+
+</body>
+</html>
